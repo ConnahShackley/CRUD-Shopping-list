@@ -1,45 +1,5 @@
 * {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
-.app {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.main {
-  box-sizing: border-box;
-  border: solid aqua 5px;
-  display: flex;
-  width: 90%;
-  margin: 5px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.card {
-  box-sizing: border-box;
-  border: solid red 5px;
-  width: 250px;
-  margin: 4px;
-  height: 290px;
-  display: flex;
-  flex-direction: column;
-}
-.card img {
-  float: left;
-  width: 240px;
-  height: 140px;
-  object-fit: cover;
-}
-.card h3 {
-  width: 90%;
-}
 
-.details {
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
-}
 
-.details p {
-  margin: 2px;
-}

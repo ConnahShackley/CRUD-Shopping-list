@@ -1,28 +1,145 @@
-import logo from './logo.svg';
+// IMPORTING USE STATE FROM RECT
 import './App.css';
+import { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+  const [items, setItems] = useState([])
+  const [inputText, setInputText] = useState("")
+
+
+// \\\ ADD HANDLER FUNCTION - DUPLICATING ARRAY ///
+  const addHandler = () => {
+    if  (inputText == "") {
+      alert("Please insert some text")
+    } else {
+
+    let storedItems =[ ...items]
+    storedItems.push(inputText)
+    setItems(storedItems)
+
+  }
+
+// \\\REMOVE HANDLER FUNCTION ///
+  }
+  const removeHandler = (index) => {
+    let storedItems = [...items]
+    // splice is used to modify the contents of an array by removing or adding new elements.
+    storedItems.splice(index,1)
+    setItems(storedItems)
+  }
+
+// \\\ USER VISUALS ///
+    return (
+    <div className = "all">
+    <div className = "header" >
+    <h1>WEEK 6 TO-DO LIST!</h1>
     </div>
-  );
-}
 
-export default App;
+    {items.map((item, index)=> {
+      return ( 
+        <div class = "box">
+          <h1 key={index}>{item} </h1>
+          <button className = "button" onClick = {() => removeHandler(index)}>Delete</button>
+          <button className = "button" onClick = {() => removeHandler(index)}>Done</button>
+  
+        </div>
+      )
+    })}
+
+      <div className = "box">
+     <button className = "button" onClick = { addHandler }>Add the item to your list</button>
+     </div>
+     <div className = "box">
+        { <p> Insert some text into the box below to add an item to your list...</p>}
+        <input onChange = {(event) => setInputText(event.target.value) } />
+     </div>
+  </div>
+ ) 
+}
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import logo from './logo.svg';
+// import './App.css';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default App;
 
 
 // import './App.css'
